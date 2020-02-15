@@ -1,4 +1,4 @@
-## Instuções
+## Instruções
 
 ```bash
 git clone https://github.com/drummerzzz/django-docker.git
