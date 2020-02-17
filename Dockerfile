@@ -12,6 +12,7 @@ libsqlite3-dev
 # Copia  e instala o conteúdo de requirements.txt
 RUN pip install -U pip setuptools
 COPY requirements.txt /app/
+COPY .env /app/
 RUN pip install -r /app/requirements.txt
 ADD . /app/
 # Django service

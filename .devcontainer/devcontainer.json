@@ -3,8 +3,7 @@
 	"context": "..",
 	"dockerFile": "../Dockerfile",
 	"dockerComposeFile": ["../docker-compose.yml"], // You need to point it your `docker-compose.yml` file with proper path.
-	// Uncomment the next line if you want to publish any ports.
-  
+	// Uncomment the next line if you want to publish any ports. 
 	// Uncomment the next line to run commands after the container is created.
 	// "postCreateCommand": "python --version",
 	"service": "django", // You must define which service you are going to use from docker compose.
@@ -12,13 +11,13 @@
 	"settings": { 
 		"terminal.integrated.shell.linux": "/bin/bash",
 		"python.pythonPath": "/usr/local/bin/python",
-		"python.linting.enabled": true,
 		"python.linting.pylintEnabled": true,
-		"python.linting.pylintPath": "/usr/local/share/pip-global/bin/pylint"
+		"python.linting.flake8Enabled": false,
+		"python.linting.enabled": true
 	},
 	// Use 'appPort' to create a container with published ports. If the port isn't working, be sure
 	// your server accepts connections from all interfaces (0.0.0.0 or '*'), not just localhost.
-	"appPort": [9000],
+	"appPort": [8000],
 
 	// Install flask and any other dependencies
 	"postCreateCommand": "pip install -r requirements.txt",
@@ -31,4 +30,4 @@
 		"ms-python.python"
 	]
 
-  }
+}

@@ -5,9 +5,9 @@ services:
   db:
     image: postgres
     environment:
-      - POSTGRES_USER=myapp
-      - POSTGRES_PASSWORD=kdkfjajr54111
-      - POSTGRES_DB=db_app
+      - POSTGRES_USER="${DB_USER}"
+      - POSTGRES_PASSWORD="${DB_PW}"
+      - POSTGRES_DB="${DB_NAME}"
   
 
   django:
