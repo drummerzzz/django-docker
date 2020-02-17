@@ -37,4 +37,4 @@ push:
 	cp .env env.txt
 	git add .
 	git commit -m "configurando env"
-	git push origin
+	git push origin master
