@@ -87,12 +87,3 @@ sudo docker-compose exec django python manage.py shell
 sudo docker-compose exec django python manage.py migrate
 sudo docker-compose exec django python manage.py createsuperuser
 ```
-
-# Importante - environment
-Crie um arquivo .env na raiz do projeto com as seguintes variaveis de ambiente
-
-```bash
-DB_NAME=dbase
-DB_USER=username
-DB_PW=dbpassword
-```
