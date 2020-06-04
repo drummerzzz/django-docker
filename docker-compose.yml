@@ -9,15 +9,24 @@ services:
       - POSTGRES_PASSWORD=${DB_PW}
       - POSTGRES_DB=${DB_NAME}
   
+  # Redis
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
 
   django:
     build: .
     command: ["./run.sh"]
     volumes:
       - .:/app
+    environment:
+      - DEVELOP=True
     ports:
       - "8000:8000"
     links:
       - db
+      - redis
     depends_on:
       - db
+      - redis

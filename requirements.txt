@@ -1,6 +1,14 @@
 Django==3.0.3
 django-filter==2.2.0
 djangorestframework==3.11.0
-Markdown==3.2
+django-cors-headers==3.2.1
+django-celery-results==1.2.1
+django-celery-beat==2.0.0
 psycopg2-binary==2.8.4
 python-decouple==3.3
+beautifulsoup4==4.8.2
+pandas==1.0.1
+celery
+redis==3.4.1
+Pillow==7.0.0
+requests==2.22.0
