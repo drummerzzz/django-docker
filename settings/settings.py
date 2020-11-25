@@ -26,7 +26,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -93,8 +93,8 @@ DATABASES = {
          'NAME': config('DB_NAME', default='db_app'),
          'USER': config('DB_USER', default='postgres'),
          'PASSWORD': config('DB_PW', default='password'),
-         'HOST': 'db',
-         'PORT': '5432',
+         'HOST': config('DB_HOST', default='db'),
+         'PORT': config('DB_PORT', default='5432')
     }
 }
 
