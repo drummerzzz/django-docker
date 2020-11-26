@@ -40,10 +40,18 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8080',
 ]
 
+MY_APPS = [
+    'accounts.users'
+]
 
-# Application definition
+LIB_APPS = [
+  'whitenoise.runserver_nostatic',
+  'django_celery_results',
+  'django_celery_beat',
+  'rangefilter'
+]
 
-INSTALLED_APPS = [
+CONTRIB_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +59,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+INSTALLED_APPS = CONTRIB_APPS + LIB_APPS + MY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -60,6 +70,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'settings.urls'
@@ -137,15 +148,18 @@ USE_TZ = False
 
 STATIC_URL = '/static/'
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
-# Celery Configs
+MIDDLEWARE_CLASSES = (
+  'whitenoise.middleware.WhiteNoiseMiddleware',
+)
+
+AUTH_USER_MODEL = 'users.User'
+
+CELERY_TIMEZONE = 'America/Sao_Paulo'
+CELERY_BROKER_URL = config('REDIS_URL', default='redis://redis:6379/0')
+CELERY_BROKER_BACKEND = config('REDIS_URL', default='redis://redis:6379/0')
 CELERY_RESULT_BACKEND = 'django-db'
-if 'DEVELOP' in os.environ:
-    CELERY_BROKER_URL = 'redis://redis:6379/0'
-    CELERY_BROKER_BACKEND = 'redis://redis:6379/0'
-else:
-    CELERY_BROKER_URL = 'redis://'
-    CELERY_BROKER_BACKEND = 'redis://'
 CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_RESULT_SERIALIZER = 'json'
 CELERY_TASK_SERIALIZER = 'json'
