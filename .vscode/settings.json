@@ -1,6 +1,7 @@
 {
-    "python.pythonPath": "/usr/local/bin/python",
-    "python.linting.pylintEnabled": true,
+    "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": false,
-    "python.linting.enabled": true
+    "python.linting.enabled": false,
+    "editor.tabSize": 2,
+    "python.pythonPath": "/home/drummerzzz/.pyenv/versions/hubspot-leads-3.8.0/bin/python"
 }
