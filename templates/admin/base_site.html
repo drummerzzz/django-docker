@@ -1,0 +1,174 @@
+{% extends "admin/base.html" %}
+
+{% block title %}
+  Administração 
+{% endblock %}
+
+{% block branding %}
+  {{block.super}}
+  <h1 style="color: white; font-weight: bold;">
+    Administração
+  </h1>
+{% endblock %}
+
+
+{% block extrastyle %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-grid-only@1.0.0/bootstrap.css">
+<style>
+
+  :root { 
+    --success: #28D17C;
+    --light-primary: #8349F5;
+    --primary: #7231F5;
+    --light-secondary: #553cb6;
+    --secondary: #231e4b;
+  }
+
+  a {
+    text-decoration: none !important;
+  }
+  
+  .bg-primary {
+    color: white !important;
+    background-color: var( --primary) !important
+  }
+  a.bg-primary:hover {
+    background-color: var( --light-secondary) !important
+  }
+
+  .bg-light-primary {
+    color: white !important;
+    background-color: var( --light-primary) !important
+  }
+
+  /* header */
+  #header {
+    background-color: var( --secondary) !important
+  }
+  /* nome do site */
+  #site-name {
+    color: white !important;
+    font-weight: bolder
+  }
+
+  /* header dos menus */
+  #changelist-filter > h2, .breadcrumbs, caption {
+    background-color: var(--light-secondary) !important
+  }
+
+  /* header table */
+  div.text > a, .action-checkbox-column, .column-__str__ {
+    background-color: var(--primary) !important;
+    color: white !important;
+  }
+
+  /* hover header table itens */
+  div.text > a:hover {
+    background-color: var(--light-primary) !important;
+  }
+
+  /* primeiro item dos menus */
+  th > a, td > a, .field-__str__ > a {
+    color: var(--light-secondary) !important;
+    font-size: medium;    
+  }
+
+  /* Tabelas de resultado  */
+  
+  #result_list > thead > tr > th {
+    background-color: var(--primary) !important;
+    text-align: center;
+    color: white !important;
+  }
+  
+  #changelist table tbody tr td {
+    color: var(--light-secondary) !important;
+  }
+
+  #changelist table tbody tr.selected {
+    background-color: #D9C7FC !important;
+  }
+
+  #changelist-filter {
+    background-color: #EEEEEE !important;
+  }
+  #changelist-filter > ul > li > a {
+    color: var(--light-primary) !important;
+    font-weight: 500 !important;
+  }
+  #changelist-filter > ul > li.selected > a {
+    color: var(--light-secondary) !important;
+    font-weight: bold !important;
+    font-weight: 600 !important;
+  }
+  /*heades de fieldsets e vertical/horizontal filters */
+  .object-tools a:link, .object-tools a:visited, .module h2, .module caption, .inline-group h2 {
+    background-color: var(--primary) !important;
+    color: white !important;
+  }
+  
+  /* btns em geral*/
+  input[type="submit"], button {
+    background-color: var(--light-secondary) !important;
+    color: white !important;
+  }
+
+  /* btn principal salvar */
+  .submit-row input.default {
+    background-color: var( --secondary) !important;
+    color: white !important;
+  }
+
+  /* btn delete*/
+  .submit-row a.deletelink {
+    background-color: red !important;
+    color: white !important;
+  }
+  ul.messagelist li.success {
+    background-color: var(--success) !important;
+    color: white !important;
+    font-weight: bolder !important;
+  }
+
+  ul.messagelist li.success a {
+    color: var( --secondary) !important;
+  }
+  
+  #searchbar {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+    color: var(--light-primary) !important;
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: 1px solid var(--light-secondary) !important;
+    border-radius: .25rem !important;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out !important;
+  }
+  #searchbar:focus {
+    border: 2px solid var(--primary) !important;
+  }
+  
+  .object-tools {
+    background: none !important;
+    padding-top: 1em !important;
+  }
+
+  .help > a {
+    padding: 0.5em;
+    margin-left: 1em;
+    color: white;
+    background-color: var(--primary);
+    border-radius: 5px;
+  }
+  .mark_safe {
+    padding: 0.3em;
+    color: white !important;
+    background-color: var(--secondary);
+    border-radius: 8px;
+  }
+  td {
+    text-align: center;
+  }
+</style>
+{% endblock %}
