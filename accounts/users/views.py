@@ -3,6 +3,9 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.shortcuts import redirect
 from accounts.users.models import User
 
+def login_redirect(request):
+  return redirect('accounts/admin/login/')
+
 @login_required
 @user_passes_test(lambda user: user.is_superuser)
 def login_user(request, pk):
