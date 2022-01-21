@@ -45,6 +45,6 @@ Unipath==1.1
 whitenoise==5.2.0
 
 # IPython
-ipython==7.18.1
+ipython==7.31.1
 jedi==0.17.2
 parso==0.7.1
